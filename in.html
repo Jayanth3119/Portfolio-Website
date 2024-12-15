@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolli Jayanth Kumar Reddy - Software Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0066ff; /* Bright Blue */
+            --secondary-green: #00c853; /* Emerald Green */
+            --background-gradient: linear-gradient(135deg, #0066ff 0%, #00c853 100%);
+            --text-color: #333333; /* Dark Gray */
+            --secondary-text-color: #555555; /* Medium Gray */
+            --background-light: #f7faff; /* Light Blue */
+            --card-background: #ffffff; /* White */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .container {
+            width: 100%;
+            /* max-width: 1520px; */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--background-gradient);
+            position: relative;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--background-gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            background: var(--white);
+            margin: 30px 0;
+            padding: 50px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+
+        .section:nth-child(odd) {
+            background: var(--background-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-blue);
+        }
+
+        /* Skills Section */
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-card {
+            text-align: center;
+            padding: 15px;
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.333% - 20px);
+            max-width: 250px;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 20px;
+            width: calc(33.333% - 20px);
+            max-width: 350px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-links a {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .education-item i {
+            font-size: 2rem; /* Icon size */
+            color: var(--primary-blue); /* Matches the theme */
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .education-item p {
+            margin: 0; /* Remove default margin for better alignment */
+            font-size: 1rem;
+            color: var(--text-color); /* Matches text theme */
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .skill-card,
+            .project-card {
+                width: calc(50% - 20px);
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skill-card,
+            .project-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container hero-content">
+            <img src="/Portfolio Website/profile-11.jpg" alt="Jayanth Kumar Reddy" class="profile-img">
+            <h1>Kolli Jayanth Kumar Reddy</h1>
+            <p>Innovative Java Developer | Blockchain Enthusiast | Aspiring Software Engineer</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn">Explore Portfolio</a>
+                <a href="#contact" class="btn">Hire Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section container">
+        <h2 class="section-title">About Me</h2>
+        <p>Hi! I'm Jayanth, a software developer with expertise in Core Java, Spring Boot, and Blockchain. I have a strong passion for designing efficient systems and creating innovative solutions. Currently pursuing my BE in Computer Science with a 9.1 CGPA, I'm eager to contribute to impactful tech projects.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section container">
+        <h2 class="section-title">Key Skills</h2>
+        <div class="skills">
+            <div class="skill-card">
+                <i class="ri-code-s-slash-line"></i>
+                <h3>Programming</h3>
+                <p>Core Java, C, DSA</p>
+            </div>
+            <div class="skill-card">
+                <i class="ri-settings-3-line"></i>
+                <h3>Frameworks</h3>
+                <p>Spring Boot, React, Hibernate</p>
+            </div>
+            <div class="skill-card">
+                <i class="ri-database-2-line"></i>
+                <h3>Databases</h3>
+                <p>MySQL, MongoDB, H2</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>Stock Quotes</h3>
+                <p>Real-time stock data retrieval using Spring Boot and Yahoo Finance API.</p>
+                <div class="project-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                </div>
+                <a href="https://github.com/Jayanth3119/StockQuotes" class="btn">View Project Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Student Forum</h3>
+                <p>An interactive platform connecting students, alumni, and faculty for knowledge exchange.</p>
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                </div>
+                <a href="https://github.com/Jayanth3119/STUDENT_FORUM-Project-" class="btn">Explore Forum Design</a>
+            </div>
+            <div class="project-card">
+                <h3>Blockchain Tracker</h3>
+                <p>Created a blockchain based system to track transactions and maintain a decentralized ledger.</p>
+                <div class="project-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">thymeleaf</span>
+                </div>
+                <a href="https://github.com/Jayanth3119/BlockChain1" class="btn">See Blockchain Insights</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section container">
+        <h2 class="section-title">Experience</h2>
+        <ul>
+            <li>HCL - Project Intern: Worked on the Blockchain Tracker project</li>
+            <li>Hackathon Participation: Solved complex challenges using Spring Boot</li>
+            <li>AIESEC Member: Experience in event management and marketing</li>
+        </ul>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-item">
+            <i class="ri-graduation-cap-line"></i>
+            <p>BE in Computer Science (Sathyabama University): CGPA - 9.1</p>
+        </div>
+        <div class="education-item">
+            <i class="ri-building-line"></i>
+            <p>Secondary High School (Resonance): CGPA - 9.01</p>
+        </div>
+        <div class="education-item">
+            <i class="ri-school-line"></i>
+            <p>SSC (Sri Chaitanya School): CGPA - 10</p>
+        </div>
+    </section>
+    
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section container">
+        <h2 class="section-title">Hobbies</h2>
+        <p>Books, Coding, Video Games, Business Case Studies, Sports</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-links">
+            <a href="mailto:jayanthreddyk799@gmail.com"><i class="ri-mail-line"></i></a>
+            <a href="https://www.linkedin.com/in/jayanth-kumar-reddy-kolli-1238b3249/"><i class="ri-linkedin-box-line"></i></a>
+            <a href="https://github.com/Jayanth3119"><i class="ri-github-line"></i></a>
+        </div>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
